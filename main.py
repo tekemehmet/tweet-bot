@@ -39,5 +39,4 @@ def post_tweet(tweet_text):
 # Example usage
 if __name__ == "__main__":
     # Simple tweet
-    
     post_tweet(tweet_text)
