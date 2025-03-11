@@ -1,24 +1,13 @@
 import feedparser
 import requests
 
-#def fetch_mtb_news():
-#    url = "https://news.google.com/rss/search?q=mountain+biking"
-#    feed = feedparser.parse(url)
-#    articles = []
-
-#    for entry in feed.entries[:2]:  # Limit to 5 articles
-#        articles.append({"title": entry.title, "link": entry.link})
-#        print(entry.title)
-#        print(entry.link)
-    
-#    return articles
-
-
 
 def shorten_url(url):
     api_url = "https://tinyurl.com/api-create.php"
     response = requests.get(api_url, params={"url": url})
     return response.text if response.status_code == 200 else url  # Fallback to original if API fails
+
+
 
 def fetch_mtb_news():
     url = "https://news.google.com/rss/search?q=mountain+biking"
