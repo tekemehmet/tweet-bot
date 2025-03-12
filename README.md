@@ -54,10 +54,6 @@ This project is a Twitter bot that fetches the latest mountain biking news from 
 
 ## License
 MIT License
-
-## Contributing
-Feel free to open issues or submit pull requests to improve the bot!
-
 ---
 
 Happy tweeting! 🚵‍♂️🔥
