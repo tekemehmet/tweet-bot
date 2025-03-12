@@ -13,3 +13,4 @@ def save_posted_news(title):
     """Yeni paylaşılan haberi dosyaya ekler."""
     with open(POSTED_NEWS_FILE, "a", encoding="utf-8") as file:
         file.write(title + "\n")
+

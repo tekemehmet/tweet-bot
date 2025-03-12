@@ -12,7 +12,7 @@ def summarize_and_translate(article):
     Haberi sadece Türkçe olarak iki cümlede özetle. 
     İlk cümlede haberin en önemli detayını açıkla. 
     İkinci cümlede MTB severler için neden önemli olduğunu belirt. 
-    Son olarak, en alakalı 2 hashtag'i belirle ve ekle.
+    
     
     Haber başlığı: {article['title']}
     """

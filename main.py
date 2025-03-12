@@ -36,7 +36,7 @@ for news in news_list:
 
 if news_to_post:
     summary = summarize_and_translate(news_to_post)
-    tweet_text = f"{summary}\n\n#MTB #MountainBiking"
+    tweet_text = f"{summary}\n\n#MTB #MountainBiking #EpicPedals"
 
     # Tweet paylaş
     try:
@@ -53,4 +53,3 @@ if news_to_post:
         print(f"Tweet paylaşılırken hata oluştu: {e}")
 else:
     print("Yeni haber bulunamadı, daha sonra tekrar dene.")
-
