@@ -4,19 +4,23 @@ from dotenv import load_dotenv
 from summarizer import summarize_and_translate
 from rss_fetcher import fetch_mtb_news
 from utils import load_posted_news, save_posted_news
+from auth import Authentication
 
 def post_mtb_news():
     """
     Fetches mountain biking news, translates, and posts to Twitter.
     Handles previously posted news tracking and error handling.
     """
-    # Twitter API'ye bağlan
-    client = tweepy.Client(
-        consumer_key=CONSUMER_API_KEY,
-        consumer_secret=CONSUMER_API_SECRET,
-        access_token=ACCESS_TOKEN,
-        access_token_secret=ACCESS_TOKEN_SECRET
-    )
+    # Initialize authentication
+    auth = Authentication()
+    
+    # Get authenticated clients
+    client = auth.get_twitter_client()
+    openai_client = auth.get_openai_client()
+    
+    if not client or not openai_client:
+        print("Authentication failed")
+        return False
 
     # Daha önce paylaşılan haberleri yükle
     posted_news = load_posted_news()
@@ -56,14 +60,4 @@ def post_mtb_news():
         return False
 
 if __name__ == "__main__":
-    # Load environment variables
-    load_dotenv()
-
-    # Twitter API kimlik bilgileri
-    CONSUMER_API_KEY = os.getenv("TWITTER_CONSUMER_API_KEY")
-    CONSUMER_API_SECRET = os.getenv("TWITTER_CONSUMER_API_SECRET")
-    ACCESS_TOKEN = os.getenv("TWITTER_ACCESS_TOKEN")
-    ACCESS_TOKEN_SECRET = os.getenv("TWITTER_ACCESS_SECRET")
-
-    # Run the main function
     post_mtb_news()
