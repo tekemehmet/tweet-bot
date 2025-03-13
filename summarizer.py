@@ -11,7 +11,9 @@ def summarize_and_translate(article):
     prompt = f"""
     Haberi sadece Türkçe olarak iki cümlede özetle. 
     İlk cümlede haberin en önemli detayını açıkla. 
-    İkinci cümlede MTB severler için neden önemli olduğunu belirt. 
+    İkinci cümlede MTB severler için neden önemli olduğunu belirt.
+    Üçüncü cümlede takipçilere yönelik bir cümle yaz. Haberin içeriğine göre buna sahip 
+    olmak istermiydin, sen ne düşünüyorsun, burda kiminle sürmek isterdin gibi cümle ile bitir. 
     
     
     Haber başlığı: {article['title']}

@@ -34,6 +34,7 @@ def post_mtb_news():
     if news_to_post:
         summary = summarize_and_translate(news_to_post)
         tweet_text = f"{summary}\n\n#MTB #MountainBiking #EpicPedals"
+        print(tweet_text)
 
         # Tweet paylaş
         try:
