@@ -14,14 +14,13 @@ def summarize_and_translate(article):
         return None
 
     prompt = f"""
-    Haberi Türkçe olarak özetle. TOPLAM KARAKTER SAYISI BOŞLUKLAR DAHİL 250'I GEÇMEMELIDIR! 
-    
+    Summarize the following news article concisely for a Twitter post.  
 
-    Kurallar:
-    1. İlk cümlede haberin en önemli detayını açıkla
-    2. İkinci cümlede takipçilere yönelik kısa bir soru/yorum ekle
-    3. Yanıt tam olarak 250 karakteri geçmemelidir
-    4. Kısa ve öz yaz, gereksiz kelimelerden kaçın
+    Haberi yalnızca Türkçe olarak MTB severlere hitap edecek şekilde, sıcak ve samimi bir dille iki cümlede özetle.
+    İlk cümlede haberin en önemli detayını açıkla.
+    İkinci cümlede bu gelişmenin MTB tutkunları için neden heyecan verici veya önemli olduğunu kendi kelimelerinle anlat. 
+
+    Özet, 250 karakteri geçmemeli. Bilgilendirici ve ilgi çekici olmalı. Hashtag kullanma. 
     
     Haber başlığı: {article['title']}
     """
@@ -39,11 +38,8 @@ def summarize_and_translate(article):
             # If too long, try one more time with stricter prompt
             prompt = f"""
             ÇOK ÖNEMLİ: Önceki yanıt çok uzundu. Aynı haberi daha kısa özetle.
-            KESINLIKLE 240 KARAKTERİ GEÇMEMELI (boşluklar dahil).
+            KESINLIKLE 250 KARAKTERİ GEÇMEMELI (boşluklar dahil).
             
-            Sadece iki kısa cümle kullan:
-            1. Haberin özü
-            2. Kısa bir soru/yorum
             
             Haber: {article['title']}
             """

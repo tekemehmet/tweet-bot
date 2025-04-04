@@ -5,7 +5,6 @@ import requests
 RSS_FEEDS = [
     "https://news.google.com/rss/search?q=mountain+biking",
     "https://www.pinkbike.com/news/rss/",
-    "https://www.mtb-news.de/news/feed/",
     "https://www.bikeradar.com/feed/",
     "https://www.singletracks.com/feed/"
 ]
