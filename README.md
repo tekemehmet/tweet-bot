@@ -34,7 +34,6 @@ A sophisticated Twitter bot that automatically fetches, summarizes, and shares m
 1. **Clone the Repository**
    ```sh
    git clone https://github.com/tekemehmet/tweet-bot
-   cd mtb-news-bot
    ```
 
 2. **Install Dependencies**
