@@ -14,7 +14,7 @@ def summarize_and_translate(article):
         return None
 
     prompt = f"""
-    Summarize the following news article concisely for a Twitter post.  
+      
 
     Haberi yalnızca Türkçe olarak MTB severlere hitap edecek şekilde, sıcak ve samimi bir dille iki cümlede özetle.
     İlk cümlede haberin en önemli detayını açıkla.
